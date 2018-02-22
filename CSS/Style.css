@@ -3,48 +3,6 @@ body{
 	background-color: #595959;
 }
 
-/* Centering and movement of the header title */
-h1, h3 {
-	text-align: center;
-	background-color: #66c2ff;
-	margin: 0;
-	padding: 5px;
-	position: relative;
-	left: -10px;
-	top: -10px;
-	width: 101%;
-}
-
-/* The general formating for the header picture */
-.happy-background, .family-background, .savings-background, .investment-background, .business-group, .career {
-	opacity: .7;
-	width: 100%;
-	height: 400px;
-	position: relative;
-	left: -10px;
-	top: -10px;
-	width: 102%;
-}
-
-/* Uses an image from http://i.huffpost.com/gen/3971736/images/o-HAPPY-PEOPLE-facebook.jpg , For the Home Page & Credit & Lending Page*/
-/* This image has been cropped to be properly displayed looks wise */
-div.happy-background {
-	background-image: url("../Images/HappyPeopleStockPS.jpg");
-	background-size: cover;
-}
-
-/*For some reason the opacity for this text does not wanna revert back, even tho I did it almost exactly like W3Schools,
-I don't know how else to tweak it to make it work (Tried making other divs and such but no change) */
-p.internal-text {
-	font-weight: bold;
-	opacity: 1;
-	width: 25%;
-	color: #000;
-	padding: 100px;
-	float: left;
-	font-size: 25px;
-}
-
 /* Formating for the main content of the page */
 div.box {
 	width: 100%;
@@ -56,15 +14,6 @@ div.box {
 	position: relative;
 	left: -10px;
 	top: 10px;
-}
-
-div.content {
-	width: 65%;
-}
-
-/*Used for slider*/
-.slidecontainer {
-    width: 100%;
 }
 
 /* Validation */
@@ -135,44 +84,4 @@ li.navList a, li.dropdown a{
 li.navList {
 	position: relative;
 	display: inline;
-}
-
-/* This part is for the dropdown for Services */
-li.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-ul.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #595959;
-	min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-	top: 25px;
-	list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-}
-
-li.dropdown-content a {
-	display: block;
-    color: #FFFFFF;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-li a.active {
-	background-color: #66c2ff;
-}
-
-li a:hover:not(.active) {
-	background-color: #737373;
 }
