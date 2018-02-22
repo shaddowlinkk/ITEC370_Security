@@ -16,15 +16,6 @@
 				$username = $password = "";
 				
 				session_start();
-				//connects to the database for users
-				$conn = new mysqli("localhost", "itec370", "itec", "itec370");
-				
-				// Check connection
-				if ($conn->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
-				} 
-				
-				
 				
 				echo "<form action=";
 				echo htmlspecialchars($_SERVER["PHP_SELF"]);
@@ -49,6 +40,14 @@
 					$username = check_input($_POST['username']);
 					$password = hash('sha256',check_input($_POST['password']));
 					
+					//connects to the database for users
+					$conn = new mysqli("localhost", "itec370", "itec", "itec370");
+				
+					// Check connection
+					if ($conn->connect_error) {
+						die("Connection failed: " . $conn->connect_error);
+					} 
+					
 					$query = "SELECT password FROM login WHERE username= '".$username."'";
 					$userlist = $conn->query($query);
 					
@@ -65,6 +64,8 @@
 							}
 						}
 					}
+					
+					$conn->close();
 				}
 				
 				//Used for validating data No Hackers allowed (Hopefully)
@@ -75,8 +76,6 @@
 					$data = htmlspecialchars($data);
 					return $data;
 				}
-				
-				$conn->close();
 			?>
 			<!--This is the HTML for the form that the user provides input for -->
 			
