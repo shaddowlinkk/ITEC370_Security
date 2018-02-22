@@ -49,14 +49,16 @@
 				{
 					$username = check_input($_POST['username']);
 					$password = hash('sha256',check_input($_POST['password']));
-					echo $username;
+					
+					$query = "SELECT password FROM login WHERE username=".$username;
+					$userlist = $conn->query($query);
 					
 					if ($userlist->num_rows > 0) 
 					{
 						// output data of each row
 						while($row = $userlist->fetch_assoc())
 						{
-							if ($username == $row["username"] && $password == $row["password"])
+							if ($password == $row["password"])
 							{
 								$_SESSION['login'] = $row["UID"];
 								$loginCorrect = true;
