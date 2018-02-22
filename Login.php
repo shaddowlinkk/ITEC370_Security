@@ -47,8 +47,8 @@
 				//Upon receiving information form the submit validates information then runs it against the info array
 				if ($_SERVER["REQUEST_METHOD"] == "POST") 
 				{
-					$username = hash('sha256',check_input($_POST['username']));
-					$password = check_input($_POST['password']);
+					$username = check_input($_POST['username']);
+					$password = hash('sha256',check_input($_POST['password']));
 					echo $username;
 					
 					if ($userlist->num_rows > 0) 
