@@ -24,8 +24,7 @@
 					die("Connection failed: " . $conn->connect_error);
 				} 
 				
-				$query = "SELECT username, password, UID FROM login";
-				$userlist = $conn->query($query);
+				
 				
 				echo "<form action=";
 				echo htmlspecialchars($_SERVER["PHP_SELF"]);
