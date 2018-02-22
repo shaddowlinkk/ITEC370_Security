@@ -49,7 +49,8 @@
 					$username = check_input($_POST['username']);
 					$password = hash('sha256',check_input($_POST['password']));
 					
-					$query = "SELECT password FROM login WHERE username=".$username;
+					$query = "SELECT password FROM login WHERE username= '".$username."'";
+					echo"SELECT password FROM login WHERE username=".$username;
 					$userlist = $conn->query($query);
 					
 					if ($userlist->num_rows > 0) 
