@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>This thing</title>
+		<title>I.S.M - Acount Page</title>
 		
 		<link rel="stylesheet" type="text/css" href="CSS/Style.css">
 	</head>

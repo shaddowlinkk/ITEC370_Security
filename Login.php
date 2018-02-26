@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>This awesome thing</title>
+		<title>I.S.M. Login</title>
 		
 		<link rel="stylesheet" type="text/css" href="CSS/Style.css">
 	</head>
