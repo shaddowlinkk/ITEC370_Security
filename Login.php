@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>This awesome thing</title>
+		<title>I.S.M. - Login</title>
 		
 		<link rel="stylesheet" type="text/css" href="CSS/Style.css">
 	</head>
@@ -76,11 +76,8 @@
 					$data = htmlspecialchars($data);
 					return $data;
 				}
-<<<<<<< HEAD
-				//adsfasdfasdfasdfasdf
+
 				$conn->close();
-=======
->>>>>>> f1d010f14ab21f42f685bff86ae494ffaa5626bb
 			?>
 			<!--This is the HTML for the form that the user provides input for -->
 			
