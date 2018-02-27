@@ -48,7 +48,7 @@
 						die("Connection failed: " . $conn->connect_error);
 					} 
 					
-					$query = "SELECT password FROM login WHERE username= '".$username."'";
+					$query = "SELECT password, UID FROM login WHERE username= '".$username."'";
 					$userlist = $conn->query($query);
 					
 					if ($userlist->num_rows > 0) 
@@ -76,8 +76,6 @@
 					$data = htmlspecialchars($data);
 					return $data;
 				}
-
-				$conn->close();
 			?>
 			<!--This is the HTML for the form that the user provides input for -->
 			
