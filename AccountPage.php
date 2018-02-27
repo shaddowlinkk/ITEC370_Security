@@ -11,13 +11,15 @@
 		</div>
 		
 		<!--Main body of stuff-->
-		<div>
+		<div class="box">
+			<div class="content">
 				<p>
 					Account of: 
 					<?php session_start();
 						echo $_SESSION['login'];
 					?>
 				</p>
+			</div>
 		</div>
 	</body>
 </html>
