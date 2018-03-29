@@ -30,7 +30,7 @@
 					session_start();
 					//echo $_SESSION['login'];
 					
-					$limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 25;
+					$limit = 10;
 					$page = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
 					$links = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 7;
 					$filter = [];
