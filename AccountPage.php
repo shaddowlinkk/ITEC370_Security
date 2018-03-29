@@ -18,6 +18,20 @@
 			{
 				display: none;
 			}
+			
+			th
+			{
+				padding: 10px;
+				padding-top: 2px;
+				padding-bottom: 2px;
+			}
+			
+			td
+			{
+				padding: 10px;
+				padding-top: 2px;
+				padding-bottom: 2px;
+			}
 		</style>
 	</head>
 	
