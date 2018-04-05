@@ -74,7 +74,7 @@
 			  <div class="box">
 			  
 				<figure class="avatar">
-				  <img src="https://placehold.it/128x128">
+				  <img src="Images/3NEK.png">
 				</figure>
 				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 				
