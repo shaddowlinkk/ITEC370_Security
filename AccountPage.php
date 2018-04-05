@@ -23,7 +23,14 @@
 		?>
 			
 		<!-- Table goes here -->
-		<table id="table_id" class="display"></table>
+		<table id="table_id" class="display">
+			<thead>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Message</th>
+			</thead>
+		</table>
 		<script>				
 			$('#table_id').DataTable(
 			{
