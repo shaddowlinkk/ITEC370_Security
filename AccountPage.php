@@ -26,13 +26,28 @@
 		<?php 
 			session_start();
 			
+			//Redirects them to the login page if they have not logged in yet
+			
+			if ($_SESSION['loggedIn'] == false)
+			{
+				echo "<script>location.href='Login.php';</script>";
+			}
+			
 			$filter = ['ID' => $_SESSION['login']];
 			$options = [];
 			$DataTables = new GetData($filter, $options);
 			
 			$data = $DataTables->getData();
 		?>
-			
+		<script>
+			function redirect ()
+			{
+				location.href='Login.php';
+			}
+		</script>
+		<div>
+			<button type="button" id="logout" onclick="redirect()">Log Out</button>
+		</div>
 		<!-- Table goes here -->
 		<table id="table_id" class="display" class="dataTable">
 			<thead>
@@ -40,12 +55,14 @@
 				<th>ID</th>
 				<th>First Name</th>
 				<th>Last Name</th>
+				<th>Message</th>
 			</thead>
 			<tfoot>
 				<th></th>
 				<th>ID</th>
 				<th>First Name</th>
 				<th>Last Name</th>
+				<th>Message</th>
 			</tfoot>
 		</table>
 		<script>
@@ -64,6 +81,25 @@
 			{
 				var table = $('#table_id').DataTable( {
 					data: <?php echo json_encode($data); ?>,
+					columnDefs:
+					[{
+						targets: 4,
+						data: 'MSG',
+						render: function (data, type, row, meta)
+						{
+							//Trims the string and appends a ... to show that there is more to the message
+							if (data.length > 30)
+							{
+								return data.substring(0, 30) + "...";
+							}
+							//If smaller than 30 it will just return the normal data
+							else if (data.length < 30)
+							{
+								return data;
+							}
+						}
+					}],
+					//Each column of data
 					columns: 
 					[
 					{
@@ -74,7 +110,8 @@
 					},
 					{ data: 'ID' },
 					{ data: 'FirstName' },
-					{ data: 'LastName' }
+					{ data: 'LastName' },
+					{ data: 'MSG' }
 					],
 					"order": [[3, 'asc']]
 				} );
@@ -98,20 +135,7 @@
 						tr.addClass('shown');
 					}
 				} );
-			} );
-		
-			/*$('#table_id').DataTable(
-			{
-				data: <?php echo json_encode($data); ?>,
-				columns: 
-				[
-					{ data: 'ID' },
-					{ data: 'FirstName' },
-					{ data: 'LastName' },
-					{ data: 'MSG' }
-				]
-			} );*/
-			
+			} );			
 		</script>	
 		
 		<?php
